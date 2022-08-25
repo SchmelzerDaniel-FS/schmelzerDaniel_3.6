@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Register</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="styles.css" rel="stylesheet" />
+    </head>
+    <body id="page-top">
+        <!-- Navbar -->
+        <%-include('includes/nav')%>
+        
+        <!-- Sign-In -->
+        <section class="page-section" id="signIn">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-heading text-uppercase">Sign-In</h2>
+                    <h3 class="section-subheading text-muted">Let's Get Started!</h3>
+                </div>
+                <form id="contactForm" data-sb-form-api-token="API_TOKEN">
+                    <div class="row align-items-stretch mb-5">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <!-- Username Input-->
+                                <input class="form-control" name="username" id="username" type="text" placeholder="Username *"/>
+                                <% if(typeof(errors) != 'undefined'){ %>
+                                    <span><% errors.usernameMsg %></span>
+                                    <% } %> 
+                                
+                        </div>
+                        <div class="form-group">
+                            <!-- Password Input -->
+                            <input class="form-control"  id="password" type="password"  placeholder="Password *" data-sb-validations="required" />
+                            <% if(typeof(errors) != 'undefined'){ %>
+                                <span><% errors.lNameMsg %></span>
+                                <% } %>
+                        </div>
+                    </div>
+                    <!-- Submit Button-->
+                    <div class="text-center"><button class="btn btn-primary btn-xl text-uppercase" id="submitButton" action="/signIn" method="POST" type="submit">Submit</button></div>
+                </form>
+            </div>
+        </section>
+        
+        <!-- Footer-->
+        <%-include('includes/footer')  %> 
+
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="app/scripts.js"></script>
+        <script src="app/validation.js"></script>
+        <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+    </body>
+</html>
